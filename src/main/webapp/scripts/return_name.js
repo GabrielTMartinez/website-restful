@@ -19,7 +19,7 @@ function createCORSRequest(method, url) {
 function makeCorsRequest(name) {
 	// All HTML5 Rocks properties support CORS.
 	if(name) {
-		var url = 'http://localhost:8888/rest/rs/greeting';
+		var url = 'http://localhost:8888/rest/rs/greeting?name=' + name;
 	
 		var xhr = createCORSRequest('GET', url);
 		if (!xhr) {
@@ -43,6 +43,6 @@ function makeCorsRequest(name) {
 }
 
 function greet() {
-	alert(document.getElementById("name").value);
+	//alert(document.getElementById("name").value);
 	makeCorsRequest(document.getElementById("name").value);
 }
